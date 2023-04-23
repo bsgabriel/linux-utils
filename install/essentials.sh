@@ -19,11 +19,14 @@ sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
 # intellij repo
-sudo add-apt-repository ppa:mmk2410/intellij-idea -y
+sudo add-apt-repository ppa:mmk2410/intellij-idea -y 
 
 #sublime-text repo
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo gpg --dearmor -o /usr/share/keyrings/sublimetext-keyring.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/sublimetext-keyring.gpg] https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+# android studio
+sudo add-apt-repository ppa:maarten-fonville/android-studio;
 
 sudo apt update;
 
@@ -96,4 +99,9 @@ echo "-------------------------------------";
 echo "";
 echo "------ Installing sublime-text ------";
 sudo apt install sublime-text -y;
+echo "-------------------------------------";
+
+echo "";
+echo "----- Installing Android Studio -----";
+echo sudo apt install android-studio -y;
 echo "-------------------------------------";
