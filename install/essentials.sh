@@ -10,9 +10,6 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list';
 rm -f packages.microsoft.gpg;
 
-# dbeaver apt repository
-sudo add-apt-repository ppa:serge-rider/dbeaver-ceurces.list.d/dbeaver.list -y
-
 # github cli repo
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
@@ -57,7 +54,7 @@ echo "-------------------------------------";
 
 echo "";
 echo "------------ dbeaver-ce -------------";
-sudo apt install dbeaver-ce;
+sudo snap install dbeaver-ce;
 echo "-------------------------------------";
 echo "";
 
